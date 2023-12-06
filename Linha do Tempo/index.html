@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		.container{width: 60%; margin-top: 3rem; justify-self: center; background-color: white; box-shadow: 0 0.5rem 0rem lightgrey; border-radius: 1rem; padding: 3rem;}
+		ol{
+			list-style: none; counter-reset: my-counter; margin: 0 rem; padding: 0rem 0ren 0rem 1.5rem;
+		}
+		li{counter-increment: my-counter; border-left: 1px solid lightgray; padding-top: 2rem; padding-bottom: 2rem;}
+		li:before{content: "0" counter(my-counter); font-weight: bold; background-color: tomato; border-radius: 50%; padding: 1rem; color: white; margin-left: -1.5rem; margin-right: 2rem;}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<ol>
+			<li>Item 01 lista</li>
+			<li>Item 02 lista</li>
+			<li>Item 03 lista</li>
+		</ol>
+	</div>
+</body>
+</html>

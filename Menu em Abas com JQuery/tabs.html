@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Treinamento</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<style>
+body {font-family: Arial;}
+
+.main{width: 90%; margin: 0 auto;}
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    margin: 0 auto;
+}
+
+
+.tab div {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 16%;
+    padding: 14px 2px;
+    transition: 0.3s;
+    font-size: 17px;
+    text-align: center;
+    margin:0 1%;
+}
+
+.tab div:hover {
+    background-color: #ddd;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    
+}
+
+@media screen and (max-width: 600px){
+    .main{width: 100%;}
+}
+
+</style>
+</head>
+<body>
+<section class="main"> 
+  <nav> 
+    <div class="tab">
+      <div class="tablinks" >Aba 1</div>
+      <div class="tablinks" >Aba 2</div>
+      <div class="tablinks" >Aba 3</div>
+      <div class="tablinks" >Aba 4</div>
+      <div class="tablinks" >Aba 5</div>
+      <div class="tablinks" >Aba 6</div>
+      <div class="tablinks" >Aba 7</div>
+    </div>
+  </nav>
+  
+  <section>
+    <div class="tabcontent">
+      <h3>Titulo 1</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint laboriosam blanditiis iusto rem, eligendi necessitatibus dolores, officiis illum quam atque qui officia commodi sed, accusantium. Obcaecati consequatur, itaque repellat omnis!</p>
+    </div>
+
+    <div class="tabcontent">
+      <h3>Titulo 2</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint laboriosam blanditiis iusto rem, eligendi necessitatibus dolores, officiis illum quam atque qui officia commodi sed, accusantium. Obcaecati consequatur, itaque repellat omnis!</p>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint laboriosam blanditiis iusto rem, eligendi necessitatibus dolores, officiis illum quam atque qui officia commodi sed, accusantium. Obcaecati consequatur, itaque repellat omnis!</p>
+    </div>
+
+    <div class="tabcontent">
+      <h3>Titulo 3</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint laboriosam blanditiis iusto rem, eligendi necessitatibus dolores, officiis illum quam atque qui officia commodi sed, accusantium. Obcaecati consequatur, itaque repellat omnis!</p>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint laboriosam blanditiis iusto rem, eligendi necessitatibus dolores, officiis illum quam atque qui officia commodi sed, accusantium. Obcaecati consequatur, itaque repellat omnis!</p>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint laboriosam blanditiis iusto rem, eligendi necessitatibus dolores, officiis illum quam atque qui officia commodi sed, accusantium. Obcaecati consequatur, itaque repellat omnis!</p>
+    </div>
+
+    <div class="tabcontent">
+      <h3>Titulo 4</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint laboriosam blanditiis iusto rem, eligendi necessitatibus dolores, officiis illum quam atque qui officia commodi sed, accusantium. Obcaecati consequatur, itaque repellat omnis!</p>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint laboriosam blanditiis iusto rem, eligendi necessitatibus dolores, officiis illum quam atque qui officia commodi sed, accusantium. Obcaecati consequatur, itaque repellat omnis!</p>
+    </div>
+
+    <div class="tabcontent">
+      <h3>Titulo 5</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint laboriosam blanditiis iusto rem, eligendi necessitatibus dolores, officiis illum quam atque qui officia commodi sed, accusantium. Obcaecati consequatur, itaque repellat omnis!</p>
+    </div>
+
+    <div class="tabcontent">
+      <h3>Titulo 6</h3>
+      <p>Conteúdo 6</p>
+    </div>
+
+    <div class="tabcontent">
+      <h3>Titulo 7</h3>
+      <p>Conteúdo 7</p>
+    </div>
+  </section>
+</section>
+
+<script>
+
+
+
+
+// executando a function em cada aba
+$(".tablinks").click(function(){
+    // passando indice da aba e indice e conteudo do content associado
+    openContent($(".tabcontent"), $(this).index());
+});
+
+// Conteudo 1 aparecendo por Default
+$('.tabcontent').eq(0).show();
+
+function openContent(content, indiceContent) {
+    
+    // ocultando todos conteudos
+    content.hide();
+
+    // mostrando conteudo correspondente ao elemento clicado
+    content.eq(indiceContent).show();
+}
+
+</script>
+     
+</body>
+</html> 

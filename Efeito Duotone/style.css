@@ -1,0 +1,3 @@
+body{margin: 0; padding: 0; display: grid; grid-template-columns: 1fr; grid-template-rows: auto; height: 100vh; background-color: lightsteelblue;}
+.duotone-filter{height: 0; width: 0; margin: 0; padding: 0; position: absolute; top: -999px;}
+.container{place-self: center; width: 50vw; height: 50vh; border-radius: 1rem; background-image: url(lago-quillen.jpg); background-size: cover; filter: url(#duotone-1);}

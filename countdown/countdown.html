@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<div class="contador inicio">
+  <p id="clock" class="sexta"></p>
+  <p id="clock" class="domingo" style="display:none"></p>
+</div>
+  
+<span id="clock"></span>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.autorama.com.br/arquivos/jquery.countdown.min.js"></script>
+<script type="text/javascript">
+  $('#clock').countdown('2050/11/27', function(event) {
+    var $this = $(this).html(event.strftime('<li class="dias">%D <span class="infos">DIAS</span></li><li class="horas">: %H <span class="infos">HORAS</span></li><li class="minutos">: %M <span class="infos">MINUTOS</span></li> <li class="segundos">: %S <span class="infos">SEGUNDOS</span></li>'));
+  });
+</script>
+</body>
+</html>

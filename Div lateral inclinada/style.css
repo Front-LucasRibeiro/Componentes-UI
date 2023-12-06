@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: lightgray;
+  font-family: Arial, Helvetica, sans-serif;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.container {
+  width: 75%;
+  margin: 100px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "text image";
+  background-color: white;
+}
+.item-01 {
+  grid-area: text;
+  padding: 20px;
+}
+.item-02 {
+  grid-area: image;
+  position: relative;
+  overflow: hidden;
+}
+.item-02::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: white;
+  transform: skewX(-10deg);
+  transform-origin: top left;
+}

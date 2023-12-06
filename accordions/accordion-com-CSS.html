@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Acoordion com CSS</title>
+	<style>
+		.center{
+			margin: 0 auto;
+		}
+		.accordion{
+			width: 100%;
+			max-width: 500px;
+			font-family: 'Roboto';
+		}
+		.accordion ul{list-style: none;}
+		.accordion-item input{display:none;}
+
+		.accordion-item label{
+			display:block;
+			border:1px solid #ccc;
+			cursor:pointer;
+		}
+		.acordion-select{
+			padding: 10px;
+			background: #2980b9;
+			color: #fff;
+			border-radius: 3px;
+			box-sizing: border-box;
+		}
+
+		.acordion-body{
+			height: 0px;
+			width: 0px;
+			overflow: hidden;
+			-webkit-transition: width 0.5s ease-in-out;
+			-moz-transition: width 0.5s ease-in-out;
+			-o-transition: width 0.5s ease-in-out;
+			-ms-transition: width 0.5s ease-in-out;
+			transition: width 0.5s ease-in-out;
+		}
+		.acordion-body p{
+			margin: 0;
+			padding: 8px;
+		}
+		[id^=accordion]:checked ~ .acordion-body {
+			width: 100%;
+			height: auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="accordion center">
+		<ul>
+			<li class="accordion-item">
+				<label>
+					<input type="radio" name="accordion" checked="checked" id="accordion-1" />
+					
+					<div class="acordion-select">Item 1</div>
+					<div class="acordion-body">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At eos consequatur, molestias sint suscipit consequuntur cum nisi quaerat ipsa, sapiente soluta odit voluptas eligendi ducimus nihil hic quo iste tenetur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum sapiente aspernatur sit, esse voluptatem odio repellat iste perferendis eius voluptate! Deleniti, saepe. Veritatis quidem enim at vero quaerat, voluptatum quisquam.Lorem ipsum dolor sit amet, consectetur adipisicin.</p>
+					</div>
+				</label>
+			</li>
+			<li class="accordion-item">
+				<label>
+					<input type="radio" name="accordion" id="accordion-2"/>
+					
+					<div class="acordion-select">Item 2</div>
+					<div class="acordion-body">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At eos consequatur, molestias sint suscipit consequuntur cum nisi quaerat ipsa, sapiente soluta odit voluptas eligendi ducimus nihil hic quo iste tenetur.</p>
+					</div>
+				</label>
+			</li>
+			<li class="accordion-item">
+				<label>
+					<input type="radio" name="accordion" id="accordion-3"/>
+					
+					<div class="acordion-select">Item 3</div>
+					<div class="acordion-body">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At eos consequatur, molestias sint suscipit consequuntur cum nisi quaerat ipsa, sapiente soluta odit voluptas eligendi ducimus nihil hic quo iste tenetur.</p>
+					</div>
+				</label>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

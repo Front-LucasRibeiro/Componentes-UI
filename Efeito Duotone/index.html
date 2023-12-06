@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Efeito Duotone</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<svg class="duotone-filter" xmlns="http://www.w3.org/2000/svg">
+		<filter id="duotone-1">
+			<feColorMatrix type="matrix" result="gray" 
+			values="1 0 0 0 0
+                    1 0 0 0 0>
+                    1 0 0 0 0>
+                    0 0 0 1 0">
+			</feColorMatrix>
+			<feComponentTransfer color-interpolation-filters="sRGB" result="duotone">
+				<feFuncR type="table" tableValues="0.1607843137254902 1"></feFuncR>
+				<feFuncG type="table" tableValues="0.0392156862745098 0.4862745098039216"></feFuncG>
+				<feFuncB type="table" tableValues="0.3490196078431373 0"></feFuncB>
+				<feFuncA type="table" tableValues="0 1"></feFuncA>
+			</feComponentTransfer>
+		</filter>
+	</svg>
+
+	<div class="container"></div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .chk input {
+      display: none;
+    }
+
+    .chk span {
+      font-size: 0;
+      width: 10px;
+      height: 10px;
+      display: block;
+      border: 3px solid #fff;
+      outline: 1px solid #ccc;
+      cursor: pointer;
+    }
+
+    .chk input:checked+span {
+      background-color: #c03;
+    }
+  </style>
+</head>
+
+<body>
+  <label class="chk">
+    <input type="checkbox" name="exemplo" /> 
+    <span></span>
+  </label>
+</body>
+
+</html>

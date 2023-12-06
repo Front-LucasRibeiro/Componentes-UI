@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Slider Video</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+
+	<style>
+		/*RESET*/
+		*, *:before, *:after{margin:0; padding: 0;box-sizing: border-box; -webkit-box-sizing: border-box;}
+		ol, ul{list-style: none;}
+
+		
+		.slider-video-container{width: 1024px; height: 424px;}
+		.slider-video-show{float: right; width: 72.46%; height: 424px; background: #000;}
+		.slider-active{background: #000;}
+		
+	
+	    .slider-video-nav{float: left; width: 27.54%; height: 100%; overflow: auto; background: #919191;}
+	    .slider-video-nav{ scrollbar-track-color: #000; scrollbar-base-color: #e3e0d6;}
+	    .slider-video-nav::-webkit-scrollbar { width:8px; background:#000; } 
+		.slider-video-nav::-webkit-scrollbar-thumb { border-radius:10px; background:#e3e0d6;}
+		.slider-video-nav li{height: 141px; max-height: 141px; padding: 34px 15px; color: #FFF; cursor: pointer;}
+		.slider-video-nav li:hover{background: #000; color: #FA9E23;}
+		.slider-video-nav img{width: 92px; height: 73px; float: left; margin-right: 15px;}
+		.slider-video-nav p{font-family: 'Arial', sans-serif; font-size: 13px; line-height: 22px; padding-top: 20px;}
+		
+		.slider-video-container{margin: 0 auto;}
+
+	</style>
+
+	<div class="slider-video-container">
+		<div class="slider-video-nav">
+			<nav>
+				<ul>
+					<li data-videourl="https://www.youtube.com/embed/NyW8N5hsRxY">
+						<img src="thumb.jpg" title="" class="img-responsive">
+						<p>Lorem ipsum dolor sit amet, consectetur</p>
+					</li>
+					<li data-videourl="https://www.youtube.com/embed/JGja1xJekoM">
+						<img src="thumb.jpg" title="" class="img-responsive">
+						<p>Lorem ipsum dolor sit amet, consectetur</p>
+					</li>
+					<li data-videourl="https://www.youtube.com/embed/NyW8N5hsRxY">
+						<img src="thumb.jpg" title="" class="img-responsive">
+						<p>Lorem ipsum dolor sit amet, consectetur</p>
+					</li>
+					<li data-videourl="https://www.youtube.com/embed/JGja1xJekoM">
+						<img src="thumb.jpg" title="" class="img-responsive">
+						<p>Lorem ipsum dolor sit amet, consectetur</p>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="slider-video-show">
+			<!-- <img src="thumb-2.jpg" alt=""> -->
+			<iframe width="732" height="424" src="" frameborder="0" allowfullscreen=""></iframe>
+		</div>
+	</div>
+
+
+	
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		// exibir video do indice 0
+	    var src = $('.slider-video-nav ul > li').eq(0).attr('data-videourl');
+	    $('.slider-video-show iframe').attr('src', src); 
+
+	    // mudar src do video ativo pelo src do indice da lista clicado
+	    $('.slider-video-nav ul > li').click(function() {
+	        var videosrc = $(this).attr('data-videourl');
+
+	        $('.slider-video-nav ul > li').removeClass('slider-active');
+        	$(this).addClass('slider-active');
+
+	        $('.slider-video-show iframe').attr('src', videosrc);
+	    });
+	</script>
+</body>
+</html>
