@@ -1,0 +1,241 @@
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<!-- bootstrap com a versao q contem os icones de seta -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<link href="style.css" rel="stylesheet" type="text/css" />
+
+
+
+<div class="menuMobile" id="abreMenu">
+  <div id="buttonMenu">
+    <div id="buttonMenuBar">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <span>Menu (abrir em < 1000)</span>
+  </div>
+</div>
+
+
+<nav id="navMobile" class="header-nav list-focus is-active scale">
+  <ul class="navigation">
+    <li class="nav-item" id="closeMobile">
+      <a href="javascript:void(0);" class="link -close js-close-menu"><strong>×</strong></a>
+    </li>
+
+    <li class="nav-item -nav-top -has-submenu">
+      <a class="link" href="javascript:void(0)">
+        <span class="text">Acontece na Bayer</span>
+      </a>
+    </li> 
+    
+    <!-- seções -->
+    <li class="nav-item -nav-top -has-submenu">
+      <a class="link" href="javascript:void(0)">
+        <span class="text">Seções</span>
+        <span class="glyphicon glyphicon-triangle-bottom rotateClose"></span>
+      </a>
+
+      <ul class="sub-nav -nav-top" style="display: none;">
+        <li class="subitem">
+          <a class="link" href="#">
+            <span class="nome">Carreira</span>
+          </a>
+        </li>
+        <li class="subitem">
+          <a class="link" href="#">
+            <span class="nome">Ciência</span>
+          </a>
+        </li>
+        <li class="subitem">
+          <a class="link" href="#">
+            <span class="nome">Inovação</span>
+          </a>
+        </li>
+        <li class="subitem">
+          <a class="link" href="#">
+            <span class="nome">Mosaico</span>
+          </a>
+        </li>
+        <li class="subitem">
+          <a class="link" href="#">
+            <span class="nome">Mundo Agro</span>
+          </a>
+        </li>
+        <li class="subitem">
+          <a class="link" href="#">
+            <span class="nome">Saúde</span>
+          </a>
+        </li>
+        <li class="subitem">
+          <a class="link" href="#">
+            <span class="nome">Sustentabilidade</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <!-- end seções -->
+    
+    <!-- colunista -->
+    <li class="nav-item -nav-top -has-submenu">
+      <a class="link" href="javascript:void(0)">
+        <span class="text">Colunistas</span>
+        <span class="glyphicon glyphicon-triangle-bottom rotateClose"></span>
+      </a>
+
+      <ul class="sub-nav -nav-top" style="display: none;">
+        <li class="subitem">
+          <a class="link" href="#">
+            <span class="nome">Campo 3.0</span>
+          </a>
+        </li>
+        <li class="subitem">
+          <a class="link" href="#">
+            <span class="nome">Carreira</span>
+          </a>
+        </li>
+        <li class="subitem">
+          <a class="link" href="#">
+            <span class="nome">Ciência</span>
+          </a>
+        </li>
+        <li class="subitem">
+          <a class="link" href="#">
+            <span class="nome">Inovação</span>
+          </a>
+        </li>
+        <li class="subitem">
+          <a class="link" href="#">
+            <span class="nome">Plural</span>
+          </a>
+        </li>
+        <li class="subitem">
+          <a class="link" href="#">
+            <span class="nome">Sexualidade</span>
+          </a>
+        </li>
+        <li class="subitem">
+          <a class="link" href="#">
+            <span class="nome">Sustentabilidade</span>
+          </a>
+        </li>
+        <li class="subitem">
+          <a class="link" href="#">
+            <span class="nome">Outros Colunistas</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <!-- end colunistas -->
+    
+    <!-- portal -->
+    <li class="nav-item -nav-top -has-submenu">
+      <a class="link" href="javascript:void(0)">
+        <span class="text">Sobre o Portal</span>
+        <span class="glyphicon glyphicon-triangle-bottom rotateClose"></span>
+      </a>
+
+      <ul class="sub-nav -nav-top" style="display: none;">
+        <li class="subitem">
+          <a class="link" href="#">
+            <span class="nome">Quem Somos</span>
+          </a>
+        </li>
+        <li class="subitem">
+          <a class="link" href="#">
+            <span class="nome">Fale Conosco</span>
+          </a>
+        </li>
+        <li class="subitem">
+          <a class="link" href="#">
+            <span class="nome">Mapa do Site</span>
+          </a>
+        </li>
+        <li class="subitem">
+          <a class="link" href="#">
+            <span class="nome">Acessibilidade</span>
+          </a>
+        </li>
+        <li class="subitem">
+          <a class="link" href="#">
+            <span class="nome">Aplicativos</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <!-- end portal -->
+</nav>
+
+<script>
+  var openMenuMobile = document.getElementById("abreMenu");
+  var closeMenuMobile = document.getElementById("closeMobile");
+  var length = document.getElementsByClassName("nav-item").length;
+
+  // openMenu
+  openMenuMobile.addEventListener("click",function(){
+
+    var menuMobile = document.getElementById("navMobile");
+    menuMobile.style.display="block";
+    menuMobile.classList.add("scale");
+  });
+
+  // closeMenu
+  closeMenuMobile.addEventListener("click",function(){
+
+    var menuMobile = document.getElementById("navMobile");
+    menuMobile.style.display="none";
+  });
+
+  for(let i=0; i<=length-1;i++){
+
+    let openSubMenu = document.getElementsByClassName("nav-item");
+    let subMenu = document.getElementsByClassName("sub-nav");
+    let icon = document.getElementsByClassName("glyphicon");
+
+    openSubMenu[i].addEventListener("click",function(){
+
+      // 0  = secoes  1  = colunistas  sobre o portal  = 2
+      switch(i) {
+
+        case 2:
+        if(subMenu[0].style.display == "block"){
+          subMenu[0].style.display = "none";
+          icon[0].classList.add("rotateClose");
+          icon[0].classList.remove("rotateOpen");
+        }else{
+          subMenu[0].style.display = "block";
+          icon[0].classList.add("rotateOpen");
+          icon[0].classList.remove("rotateClose");
+        }
+        break;
+
+        case 3:
+        if(subMenu[1].style.display == "block"){
+          subMenu[1].style.display = "none";
+          icon[1].classList.add("rotateClose");
+          icon[1].classList.remove("rotateOpen");
+        }else{
+          subMenu[1].style.display = "block";
+          icon[1].classList.add("rotateOpen");
+          icon[1].classList.remove("rotateClose");
+        }
+        break;
+
+        case 4:
+        if(subMenu[2].style.display == "block"){
+          subMenu[2].style.display = "none";
+          icon[2].classList.add("rotateClose");
+          icon[2].classList.remove("rotateOpen");
+        }else{
+          subMenu[2].style.display = "block";
+          icon[2].classList.add("rotateOpen");
+          icon[2].classList.remove("rotateClose");
+        }
+        break;
+      };
+    });
+  }
+</script>

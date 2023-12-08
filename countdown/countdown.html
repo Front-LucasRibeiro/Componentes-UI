@@ -1,27 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
+
 <body>
 
-<div class="contador inicio">
-  <p id="clock" class="sexta"></p>
-  <p id="clock" class="domingo" style="display:none"></p>
-</div>
-  
-<span id="clock"></span>
+  <div class="container">
+    <h1 id="headline">Countdown to my birthday</h1>
+    <div id="countdown">
+      <ul>
+        <li><span id="days"></span>days</li>
+        <li><span id="hours"></span>Hours</li>
+        <li><span id="minutes"></span>Minutes</li>
+        <li><span id="seconds"></span>Seconds</li>
+      </ul>
+    </div>
+    <div id="content" class="emoji">
+      <span>🥳</span>
+      <span>🎉</span>
+      <span>🎂</span>
+    </div>
+  </div>
 
+  <script type="text/javascript">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://www.autorama.com.br/arquivos/jquery.countdown.min.js"></script>
-<script type="text/javascript">
-  $('#clock').countdown('2050/11/27', function(event) {
-    var $this = $(this).html(event.strftime('<li class="dias">%D <span class="infos">DIAS</span></li><li class="horas">: %H <span class="infos">HORAS</span></li><li class="minutos">: %M <span class="infos">MINUTOS</span></li> <li class="segundos">: %S <span class="infos">SEGUNDOS</span></li>'));
-  });
-</script>
+    (function () {
+      const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+
+      //I'm adding this section so I don't have to keep updating this pen every year :-)
+      //remove this if you don't need it
+      let today = new Date(),
+        dd = String(today.getDate()).padStart(2, "0"),
+        mm = String(today.getMonth() + 1).padStart(2, "0"),
+        yyyy = today.getFullYear(),
+        nextYear = yyyy + 1,
+        dayMonth = "09/30/",
+        birthday = dayMonth + yyyy;
+
+      today = mm + "/" + dd + "/" + yyyy;
+      if (today > birthday) {
+        birthday = dayMonth + nextYear;
+      }
+      //end
+
+      const countDown = new Date(birthday).getTime(),
+        x = setInterval(function () {
+
+          const now = new Date().getTime(),
+            distance = countDown - now;
+
+          document.getElementById("days").innerText = Math.floor(distance / (day)),
+            document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+            document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+            document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+          //do something later when date is reached
+          if (distance < 0) {
+            document.getElementById("headline").innerText = "It's my birthday!";
+            document.getElementById("countdown").style.display = "none";
+            document.getElementById("content").style.display = "block";
+            clearInterval(x);
+          }
+          //seconds
+        }, 0)
+    }());
+
+  </script>
 </body>
+
 </html>
